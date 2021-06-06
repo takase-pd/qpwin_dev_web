@@ -38,7 +38,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'ようこそ',
+                  'ようこそ Q+win',
                   style: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Poppins',
                   ),
