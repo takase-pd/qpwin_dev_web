@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "831366722811",
+    "project_id": "qpwin-f39e7",
+    "storage_bucket": "qpwin-f39e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831366722811:android:ccc23bb0ab230a9abe6c5e",
+        "android_client_info": {
+          "package_name": "com.particledrawing.qpwindev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831366722811-p92u8ub62uvdh9htef1qv0tf69u06dp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgo2KlF-huPbXI04VSwDOjN_q0Z6Ew5Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831366722811-p92u8ub62uvdh9htef1qv0tf69u06dp9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "831366722811-jp1sge5ffplf1euqnk9t1jjbi6t286og.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.particledrawing.qpwindevweb"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831366722811:android:de3764f8d0641a59be6c5e",
+        "android_client_info": {
+          "package_name": "com.particledrawing.qpwindevweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831366722811-p92u8ub62uvdh9htef1qv0tf69u06dp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgo2KlF-huPbXI04VSwDOjN_q0Z6Ew5Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831366722811-p92u8ub62uvdh9htef1qv0tf69u06dp9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "831366722811-jp1sge5ffplf1euqnk9t1jjbi6t286og.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.particledrawing.qpwindevweb"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

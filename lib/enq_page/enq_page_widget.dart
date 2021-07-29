@@ -1,5 +1,4 @@
 import '../backend/backend.dart';
-import '../enq_page/enq_page_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down_template.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -7,14 +6,19 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePageWidget extends StatefulWidget {
-  HomePageWidget({Key key}) : super(key: key);
+class EnqPageWidget extends StatefulWidget {
+  EnqPageWidget({
+    Key key,
+    this.enqId,
+  }) : super(key: key);
+
+  final int enqId;
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _EnqPageWidgetState createState() => _EnqPageWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _EnqPageWidgetState extends State<EnqPageWidget> {
   String dropDownValue1;
   String dropDownValue2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -228,7 +232,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'アンケート一覧',
+                          'アンケート',
                           style: FlutterFlowTheme.title1.override(
                             fontFamily: 'Poppins',
                           ),
@@ -473,7 +477,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                           StreamBuilder<List<EnqRecord>>(
                             stream: queryEnqRecord(
-                              limit: 20,
+                              queryBuilder: (enqRecord) => enqRecord.where('id',
+                                  isEqualTo: widget.enqId),
+                              singleRecord: true,
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
@@ -499,15 +505,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                 );
                               }
-                              return ListView.builder(
+                              final listViewEnqRecord =
+                                  listViewEnqRecordList.first;
+                              return ListView(
                                 padding: EdgeInsets.zero,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
-                                itemCount: listViewEnqRecordList.length,
-                                itemBuilder: (context, listViewIndex) {
-                                  final listViewEnqRecord =
-                                      listViewEnqRecordList[listViewIndex];
-                                  return Container(
+                                children: [
+                                  Container(
                                     width: double.infinity,
                                     height: 30,
                                     decoration: BoxDecoration(
@@ -525,28 +530,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        EnqPageWidget(
-                                                      enqId:
-                                                          listViewEnqRecord.id,
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                              child: Text(
-                                                listViewEnqRecord.id.toString(),
-                                                textAlign: TextAlign.start,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Colors.black,
-                                                ),
+                                            child: Text(
+                                              listViewEnqRecord.id.toString(),
+                                              textAlign: TextAlign.start,
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.black,
                                               ),
                                             ),
                                           ),
@@ -743,8 +733,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         )
                                       ],
                                     ),
-                                  );
-                                },
+                                  )
+                                ],
                               );
                             },
                           )

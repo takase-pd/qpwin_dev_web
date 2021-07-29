@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:qpwin_dev_web/home_page/home_page_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'flutter_flow/flutter_flow_theme.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
