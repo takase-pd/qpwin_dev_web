@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "qpwin-f39e7"
+  },
+  "targets": {
+    "qpwin-f39e7": {
+      "hosting": {
+        "qpwinweb": [
+          "qpwin-dev-web-b8a6a"
+        ]
+      }
+    }
   }
 }
